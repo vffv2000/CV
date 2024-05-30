@@ -2,6 +2,12 @@
 
 This project is a simple portfolio website created using HTML and CSS. The website is deployed on Github Pages and can be accessed via [link to website](https://vffv2000.github.io/CV/).
 
+## TODO
+- Responsive design for mobile devices
+- Fix styles for dropdown lists
+- Add dark mode
+- Add more animations
+
 ## Usage
 
 You can use this project to create your own portfolio website. Simply clone the repository and start working on your project.

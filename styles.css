@@ -90,6 +90,13 @@ h2{
   letter-spacing: 1px;
   margin: 0 0 1rem;
 }
+.skills_left{
+  list-style-type: none;
+  padding: 0;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  margin: 0 0 1rem;
+}
 
 /* RIGHT COLUMN */
 .right-column{
@@ -126,3 +133,70 @@ h2{
 .experience-list{
   list-style-type: circle;
 }
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  opacity: 0; /* Начальное значение непрозрачности */
+  visibility: hidden; /* Начальное значение видимости */
+  transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out; /* Добавляем переход для изменения непрозрачности и видимости */
+}
+
+.skills li {
+  list-style: none;
+  border: 2px solid #4472C4;
+  padding: 2px 4px;
+  margin: 5px;
+  border-radius: 9px;
+  background-color: #f9f9f9;
+}
+
+details:not([open]) .skills {
+  opacity: 0; /* Скрываем элемент путем установки непрозрачности на 0 */
+  visibility: hidden; /* Скрываем элемент путем установки видимости на hidden */
+}
+
+details[open] .skills {
+  opacity: 1; /* Показываем элемент, устанавливая непрозрачность на 1 */
+  visibility: visible; /* Показываем элемент, устанавливая видимость на visible */
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  position: relative;
+  padding-left: 20px;
+  list-style: none; /* Скрыть стандартный треугольник */
+}
+
+summary::marker {
+  display: none; /* Скрыть стандартный треугольник для браузеров, которые поддерживают ::marker */
+}
+
+summary::before {
+  content: '\f0d7'; /* FontAwesome icon code for down arrow */
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 700;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.6s ease-in-out;
+}
+
+
+details[open] summary::before {
+  transform: translateY(-50%) rotate(180deg); /* Rotate the icon when details are open */
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
